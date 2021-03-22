@@ -10,7 +10,7 @@ body {
 }
 #nav-bar {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-content: space-between;
   flex-direction: column;
   height: 100%;
@@ -19,8 +19,35 @@ body {
   top: 0;
   left: 0;
   padding-top: 60px;
-  background: black;
+  background: grey;
+}
+#navHeader {
+  color: black;
+  margin-bottom: 40px;
+  text-align: center;
+}
+#ulNav {
+  margin: 0;
+  padding: 0;
+  width: 90%;
+  background: white;
+  border: 1px solid black;
+  margin-left: 10px;
 }
 .nav-link {
-  background: white;
+  text-decoration: none;
+  display: block;
+  padding: 16px 20px;
+  color: black;
+  text-align: center;
+  margin: 20px 20px 20px 20px;
+  border-bottom: 1px solid black;
+}
+a:hover {
+  background-color: darkgray;
+  color: white;
+}
+a:active {
+  background-color: black;
+  color: white;
 }
