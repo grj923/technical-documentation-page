@@ -6,9 +6,10 @@ body {
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  margin-left: 25%;
   font-family: "Courier New", Courier, monospace;
+  margin-left: 25%;
 }
+
 .main-section {
   margin-bottom: 40px;
   padding-top: 20px;
@@ -28,6 +29,8 @@ h1 {
   text-align: center;
 }
 #nav-bar {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   height: 100%;
   width: 20%;
@@ -35,6 +38,7 @@ h1 {
   left: 0;
   padding-top: 60px;
   background: lightgray;
+  border: 1px solid black;
 }
 #navHeader {
   color: black;
@@ -65,17 +69,26 @@ pre {
   width: 100%;
   border: 1px solid black;
 }
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   #nav-bar {
-    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     top: 0;
-    height: 30px;
     width: 100%;
+    height: 0;
+    margin-bottom: 10px;
+    padding-top: 0;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 800px) {
+  #main-doc {
+    margin-top: 20%;
+    border-top: 1px solid black;
+  }
+}
+@media (max-width: 800px) {
   .nav-link {
-    float: left;
     display: block;
     color: black;
     text-align: center;
@@ -86,8 +99,19 @@ pre {
     border: 1px solid black;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   #navHeader {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  #main-doc {
+    margin-top: 30%;
+  }
+}
+@media (max-width: 300px) {
+  #nav-bar {
     display: none;
   }
 }
