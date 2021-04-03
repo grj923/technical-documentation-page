@@ -9,12 +9,15 @@
   </head>
   <body>
     <nav id="nav-bar">
-      <header id="navHeader"><h1>THIS IS MY TECHNICAL PAGE</h1></header>
+      <header id="navHeader"><h1>Create A Memory Game</h1></header>
       <a class="nav-link" href="#introduction">Introduction</a>
       <a class="nav-link" href="#HTML">HTML</a>
       <a class="nav-link" href="#CSS">CSS</a>
       <a class="nav-link" href="#cardArray">Card Array</a>
-      <a class="nav-link" href="#">Main Section 5</a>
+      <a class="nav-link" href="#ceateBoard">createBoard Function</a>
+      <a class="nav-link" href="#flipcard">flipcard Function</a>
+      <a class="nav-link" href="#checkForMatch">checkForMatch Function</a>
+    </nav>
     </nav>
     <main id="main-doc">
       <section class="main-section">
@@ -149,20 +152,24 @@
         <header id="cardArray"><h1>JavaScript: Card Array</h1></header>
         <p>Create</p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ante metus
-          dictum at tempor commodo ullamcorper a lacus vestibulum.
+          Start with an event listner that loads the contents of the onject when
+          the card array is called. Since the contents of the object won;t be
+          changed use the const property, as opposed to either var or let, to
+          avoid problems.
         </p>
+
+        <h4>The array should should have:</h4>
+
         <ul>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+          <li>Two Objects: name and image.</li>
+          <li>
+            The name object should have a value of the type of picture. I used
+            fast foods. So my values were fries, hotdog, etc. You can use any
+            type of picture.
+          </li>
+          <li>The image value should link to the image location.</li>
         </ul>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ante metus
-          dictum at tempor commodo ullamcorper a lacus vestibulum.
-        </p>
+        <p>To randomize the array use the .sort and Math.random.</p>
         <pre>
             <code> 
               document.addEventListener("DOMContentLoaded", () => {
@@ -220,33 +227,123 @@
                     img: "images/pizza.png",
                   },
                 ];
+              
+              cardArray.sort(() => 0.5 - Math.random());   
             </code>
         </pre>
       </section>
       <section class="main-section">
-        <header id="mainSection5"><h1>Main Section 5</h1></header>
+        <header id="createBoard">
+          <h1>JavaScript Function: createBoard</h1>
+        </header>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ante metus
-          dictum at tempor commodo ullamcorper a lacus vestibulum.
+          With the array built, you'll need to display the contents of the array
+          on the grid. A JavaScript function can do this. I named mine
+          createBoard.
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ante metus
-          dictum at tempor commodo ullamcorper a lacus vestibulum.
+          To loop through each of the objects of the array create a for loop.
+          Through each loop card will be set to the image. Then use setAttribute
+          to set the image to blank. It's a good idea to check the grid, before
+          adding the second setAttribute, the addEventListener and appendChild.
         </p>
         <pre>
             <code> 
-                x = 5; 
-                y = 6; 
-                Z = x + Y; 
+              function createBoard() {
+                for (let i = 0; i < cardArray.length; i++) {
+                  const card = document.createElement("img");
+                  card.setAttribute("src", "images/blank.png");
+                  card.setAttribute("data-id", i);
+                  card.addEventListener("click", flipcard);
+                  grid.appendChild(card);
+                }
+              }
             </code>
             </pre>
+      </section>
+      <section class="main-section">
+        <header id="flipcard">
+          <h1>JavaScript Function: flipcard</h1>
+        </header>
+        <p>
+          The flipcard function will listen for a click of the mouse on the grid. With 
+          a click of the mouse a card will be flipped, the card will be pushed to the 
+          cardsChosen array and the cardsId will be pushed to the cardsChosenId array.  
+        </p>
+        <p>
+          Create a variable, I named mine cardId. Using this.getAttribute set it to 
+          the "data-id" which is created with each pass through the createBoard loop. 
+        </p>
+        <p>
+         Create an empty cardsChosen array and an cardsChosenId array. 
+         This.setAttribute will then set the src to the image chosen - flipping the card. 
+        </p>
+        <p>
+          The last item in the function is an if statement. If the lenght the cardsChosen 
+          array reaches two, the checkForMatch function runs. If no match exists, after 
+          the timeout runs, the cards flip back.
+        </p>
+        <pre>
+            <code> 
+              function flipcard() {
+                var cardId = this.getAttribute("data-id");
+                cardsChosen.push(cardArray[cardId].name);
+                cardsChosenId.push(cardId);
+                this.setAttribute("src", cardArray[cardId].img);
+                if (cardsChosen.length === 2) {
+                  setTimeout(checkForMatch, 500);
+                }
+              }
+            </code>
+            </pre>
+      </section>
+      <section class="main-section">
+        <header id="checkForMatch">
+          <h1>JavaScript Function: checkForMatch</h1>
+        </header>
+        <h4>The checkForMatch function will check for three things:</h4>
         <ul>
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
         </ul>
+        <p>
+          With the array built, you'll need to display the contents of the array
+          on the grid. A JavaScript function can do this. I named mine
+          createBoard.
+        </p>
+        <p>
+          To loop through each of the objects of the array create a for loop.
+          Through each loop card will be set to the image. Then use setAttribute
+          to set the image to blank. It's a good idea to check the grid, before
+          adding the second setAttribute, the addEventListener and appendChild.
+        </p>
+        <pre>
+            <code> 
+              function checkForMatch() {
+                var cards = document.querySelectorAll("img");
+                const optionOneId = cardsChosenId[0];
+                const optionTwoId = cardsChosenId[1];
+            
+                if (optionOneId == optionTwoId) {
+                  cards[optionOneId].setAttribute("src", "images/blank.png");
+                  cards[optionTwoId].setAttribute("src", "images/blank.png");
+                  alert("You Have Clicked The Same Image");
+                } else if (cardsChosen[0] === cardsChosen[1]) {
+                  alert("You Have Found A Match");
+                  cards[optionOneId].setAttribute("src", "images/white.png");
+                  cards[optionTwoId].setAttribute("src", "images/white.png");
+                  cards[optionOneId].removeEventListener("click", flipcard);
+                  cards[optionTwoId].removeEventListener("click", flipcard);
+                  cardsWon.push(cardsChosen);
+                } else {
+                  cards[optionOneId].setAttribute("src", "images/blank.png");
+                  cards[optionTwoId].setAttribute("src", "images/blank.png");
+                  alert("Sorry, Try Again!");
+                }
+            </code>
+            </pre>
+       
       </section>
     </main>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
