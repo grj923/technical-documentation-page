@@ -12,8 +12,8 @@
       <header id="navHeader"><h1>THIS IS MY TECHNICAL PAGE</h1></header>
       <a class="nav-link" href="#introduction">Introduction</a>
       <a class="nav-link" href="#HTML">HTML</a>
-      <a class="nav-link" href="#">Main Section 3</a>
-      <a class="nav-link" href="#">Main Section 4</a>
+      <a class="nav-link" href="#CSS">CSS</a>
+      <a class="nav-link" href="#cardArray">Card Array</a>
       <a class="nav-link" href="#">Main Section 5</a>
     </nav>
     <main id="main-doc">
@@ -28,38 +28,43 @@
         </p>
         <p>
           To build my JavaScript skills, I’m building a series of games using
-          JavaScript. My technical page will be about one of those games: The
-          Memory Game. Winning The Memory Game requires a player to click on two
-          blank squares. After clicking on two squares, two of nine unique
-          images are revealed. The player must remember which images were
-          revealed and where they were on the grid. With succedding selections
-          the player matches these images and when the player matches all
-          images, they win.
+          JavaScript. My technical page will be about one of the games I've
+          completed: The Memory Game.
         </p>
-        <h4>The technical page will cover:</h4>
+        <p>
+          Winning The Memory Game requires a player to click on two blank
+          squares. After clicking on two squares, two of nine unique images are
+          revealed. The player must remember which images were revealed and
+          where they were on the grid. With succedding selections the player
+          matches these images and when the player matches all images, they win.
+        </p>
+        <h4>The steps to build a memory game:</h4>
         <ul>
-          <li>
-            The steps to build a basic memory game using HTML, CSS and
-            Javascript.
-          </li>
-          <li>Describe the HTML used.</li>
-          <li>Describe the CSS used.</li>
-          <li>How to build a JavaScript function.</li>
-          <li>Describe the JavaScript functions used and how they work.</li>
+          <li>Build the HTML framework.</li>
+          <li>Use CSS to create the game area.</li>
+          <li>Create JavaScript function's to allow play.</li>
+          <li>Play! Have fun! And test your memory.</li>
         </ul>
       </section>
 
       <section class="main-section">
         <header id="HTML"><h1>HTML</h1></header>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ante metus
-          dictum at tempor commodo ullamcorper a lacus vestibulum.
+          Before adding the HTML boilerplate, create three files: index.HTML,
+          styles.css and app.js. In the index.HTML file, (Note: I'm using VS
+          code with the extension emmet snippets.) type HTML and select HTML 5
+          from the drop down menu. A standard HTML 5 biolerplate will appear.
+        </p>
+        <p><strong>Congratulations! You're on your way!</strong></p>
+        <p>
+          Link your CSS stylesheet and your JavaScript file. It's standard
+          practice to place the JavaScript link at the bottom of the HTML file,
+          just above the closing body tag.
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ante metus
-          dictum at tempor commodo ullamcorper a lacus vestibulum.
+          The foundations of all websites - the HTML boilerplate - are typically
+          similar. So, this is a good place to start. It will look similar to
+          the code below.
         </p>
         <pre>
         <code>
@@ -70,9 +75,8 @@
         &lt;head&gt;
           &lt;meta charset="utf-8"&gt;
           &lt;title &gt;The Memory Game&lt;/title&gt;
-          &lt;meta name="description" content="The HTML5 Herald"&gt;
-          &lt;meta name="author" content="SitePoint"&gt;
-          &lt;link rel="stylesheet" href="css/styles.css?v=1.0"&gt;
+          &lt;meta name="description" content="width=device-width, initial-scale=1.0"&gt;
+          &lt;link rel="stylesheet" href="styles.css"&gt;
         &lt;/head &gt;
 
         &lt;body&gt; 
@@ -83,51 +87,77 @@
           
         </code>
       </pre>
+        <h4>Keep score and create the game area:</h4>
         <ul>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+          <li>Inside the body tags, create a div with the id of game.</li>
+          <li>Inside the game div, create another div with the id of score.</li>
+          <li>Create a h3 heading with Score.</li>
+          <li>Inside the Score heading place a span with the id of result.</li>
+          <li>Create another div with the class of grid.</li>
         </ul>
+        <h4>My HTML Code:</h4>
         <pre>
           <code> 
-              x = 5; 
-              y = 6; 
-              Z = x + Y; 
+             &lt;div id="game"&gt;
+              &lt;div id="score"&gt;
+                &lt;h3&gt;
+                  Score:
+                  &lt;span id="result"&gt; &lt;/span&gt;
+                &lt;/h3&gt;
+              &lt;/div&gt;
+              &lt;div class="grid"&gt; &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/body&gt;
+        &lt;/html&gt; 
           </code>
           </pre>
       </section>
       <section class="main-section">
-        <header id="mainSection3"><h1>Main Section 3</h1></header>
+        <header id="CSS"><h1>CSS</h1></header>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ante metus
-          dictum at tempor commodo ullamcorper a lacus vestibulum.
+          My goal was to practice and build upon my JavaScript skills. So, the
+          syling was minimal.
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ante metus
-          dictum at tempor commodo ullamcorper a lacus vestibulum.
+          You'll need a grid for the play area. The images I used were 100px by
+          100px and with twelve images, So I created a grid 300 pixels tall and
+          400 pixels wide.
         </p>
+        <h4>To Create The Grid:</h4>
+        <ul>
+          <li>
+            To select and style a class component such as class="grid": .grid
+          </li>
+          <li>To define the flex container set display to flex</li>
+          <li>To wrap the containers set flex-wrap to wrap.</li>
+          <li>
+            You're ready to move on to creating the functions neded to play.
+          </li>
+        </ul>
         <pre>
             <code> 
-                x = 5; 
-                y = 6; 
-                Z = x + Y; 
+              .grid {
+                display: flex;
+                flex-wrap: wrap;
+                height: 300px;
+                width: 400px;
+              }
             </code>
-            </pre>
-        <ul>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-        </ul>
+          </pre>
       </section>
       <section class="main-section">
-        <header id="mainSection4"><h1>Main Section 4</h1></header>
+        <header id="cardArray"><h1>JavaScript: Card Array</h1></header>
+        <p>Create</p>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ante metus
           dictum at tempor commodo ullamcorper a lacus vestibulum.
         </p>
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+        </ul>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ante metus
@@ -135,16 +165,63 @@
         </p>
         <pre>
             <code> 
-                x = 5; 
-                y = 6; 
-                Z = x + Y; 
+              document.addEventListener("DOMContentLoaded", () => {
+                const cardArray = [
+                  {
+                    name: "fries",
+                    img: "images/fries.png",
+                  },
+                  {
+                    name: "fries",
+                    img: "images/fries.png",
+                  },
+                  {
+                    name: "chesseburger",
+                    img: "images/cheeseburger.png",
+                  },
+                  {
+                    name: "chesseburger",
+                    img: "images/cheeseburger.png",
+                  },
+                  {
+                    name: "hotdog",
+                    img: "images/hotdog.png",
+                  },
+              
+                  {
+                    name: "hotdog",
+                    img: "images/hotdog.png",
+                  },
+                  {
+                    name: "ice-cream",
+                    img: "images/ice-cream.png",
+                  },
+                  {
+                    name: "ice-cream",
+                    img: "images/ice-cream.png",
+                  },
+              
+                  {
+                    name: "milkshake",
+                    img: "images/milkshake.png",
+                  },
+                  {
+                    name: "milkshake",
+                    img: "images/milkshake.png",
+                  },
+              
+                  {
+                    name: "pizza",
+                    img: "images/pizza.png",
+                  },
+              
+                  {
+                    name: "pizza",
+                    img: "images/pizza.png",
+                  },
+                ];
             </code>
         </pre>
-        <ul>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-        </ul>
       </section>
       <section class="main-section">
         <header id="mainSection5"><h1>Main Section 5</h1></header>
