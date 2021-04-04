@@ -14,7 +14,7 @@
       <a class="nav-link" href="#HTML">HTML</a>
       <a class="nav-link" href="#CSS">CSS</a>
       <a class="nav-link" href="#cardArray">Card Array</a>
-      <a class="nav-link" href="#ceateBoard">createBoard Function</a>
+      <a class="nav-link" href="#createBoard">createBoard Function</a>
       <a class="nav-link" href="#flipcard">flipcard Function</a>
       <a class="nav-link" href="#checkForMatch">checkForMatch Function</a>
     </nav>
@@ -24,15 +24,12 @@
         <header id="introduction"><h1>INTRODUCTION</h1></header>
         <p>
           This technical page is the fourth of five projects required to earn a
-          certificate in Responsive Web Design from FreeCodeCamp. In the
-          beginning, I had no idea what the subject matter would be, so I
-          designed the page utilizing placeholder text. Once I had the framework
-          completed, I decided on a topic.
+          certificate in Responsive Web Design from FreeCodeCamp. First, using placeholder 
+          text I completed the framework: HTML and CSS.
         </p>
         <p>
-          To build my JavaScript skills, I’m building a series of games using
-          JavaScript. My technical page will be about one of the games I've
-          completed: The Memory Game.
+          To build my JavaScript skills, I’m building a series of games. My technical page 
+          will be about one game I've completed: The Memory Game.
         </p>
         <p>
           Winning The Memory Game requires a player to click on two blank
@@ -44,8 +41,8 @@
         <h4>The steps to build a memory game:</h4>
         <ul>
           <li>Build the HTML framework.</li>
-          <li>Use CSS to create the game area.</li>
-          <li>Create JavaScript function's to allow play.</li>
+          <li>Use CSS to create the play grid.</li>
+          <li>Create the necessary JavaScript functions.</li>
           <li>Play! Have fun! And test your memory.</li>
         </ul>
       </section>
@@ -53,16 +50,16 @@
       <section class="main-section">
         <header id="HTML"><h1>HTML</h1></header>
         <p>
-          Before adding the HTML boilerplate, create three files: index.HTML,
-          styles.css and app.js. In the index.HTML file, (Note: I'm using VS
-          code with the extension emmet snippets.) type HTML and select HTML 5
-          from the drop down menu. A standard HTML 5 biolerplate will appear.
+          First, create three files: index.HTML, styles.css and app.js. 
+          In the index.HTML file, (Note: I'm using VS code with the extension emmet snippets.) 
+          type HTML and select HTML 5 from the drop down menu. A standard HTML 5 
+          biolerplate will appear.
         </p>
         <p><strong>Congratulations! You're on your way!</strong></p>
         <p>
-          Link your CSS stylesheet and your JavaScript file. It's standard
-          practice to place the JavaScript link at the bottom of the HTML file,
-          just above the closing body tag.
+          Link your CSS stylesheet and JavaScript file to the HTML file. It's standard
+          practice to place the JavaScript link at the bottom just above the 
+          closing body tag.
         </p>
         <p>
           The foundations of all websites - the HTML boilerplate - are typically
@@ -92,11 +89,11 @@
       </pre>
         <h4>Keep score and create the game area:</h4>
         <ul>
-          <li>Inside the body tags, create a div with the id of game.</li>
-          <li>Inside the game div, create another div with the id of score.</li>
-          <li>Create a h3 heading with Score.</li>
-          <li>Inside the Score heading place a span with the id of result.</li>
-          <li>Create another div with the class of grid.</li>
+          <li>Inside the body tags, create a div with the id: game.</li>
+          <li>Inside the game div, create a div with the id: score.</li>
+          <li>Create a h3 heading named: Score.</li>
+          <li>Inside the Score heading place a span with the id: result.</li>
+          <li>Create another div with the class: grid.</li>
         </ul>
         <h4>My HTML Code:</h4>
         <pre>
@@ -122,8 +119,8 @@
           syling was minimal.
         </p>
         <p>
-          You'll need a grid for the play area. The images I used were 100px by
-          100px and with twelve images, So I created a grid 300 pixels tall and
+          You'll need a grid for the images to display. The images I used were 100px by
+          100px and with twelve images, I created a grid 300 pixels tall and
           400 pixels wide.
         </p>
         <h4>To Create The Grid:</h4>
@@ -134,7 +131,7 @@
           <li>To define the flex container set display to flex</li>
           <li>To wrap the containers set flex-wrap to wrap.</li>
           <li>
-            You're ready to move on to creating the functions neded to play.
+            Test! Now, You're ready to move on to creating the functions neded to play.
           </li>
         </ul>
         <pre>
@@ -152,11 +149,16 @@
         <header id="cardArray"><h1>JavaScript: Card Array</h1></header>
         <p>Create</p>
         <p>
-          Start with an event listner that loads the contents of the onject when
-          the card array is called. Since the contents of the object won;t be
-          changed use the const property, as opposed to either var or let, to
-          avoid problems.
+          In the app.js file, start with an event listener. This will load 
+          the contents of the file. Since the contents of the object won't be
+          changed use const instead of var or let. 
         </p>
+      <pre>
+        <code>
+          document.addEventListener("DOMContentLoaded", () => {}
+        </code>
+      </pre>
+      <p>All functions should be placed within the curly braces of the function.</p>
 
         <h4>The array should should have:</h4>
 
@@ -169,7 +171,7 @@
           </li>
           <li>The image value should link to the image location.</li>
         </ul>
-        <p>To randomize the array use the .sort and Math.random.</p>
+        
         <pre>
             <code> 
               document.addEventListener("DOMContentLoaded", () => {
@@ -231,6 +233,15 @@
               cardArray.sort(() => 0.5 - Math.random());   
             </code>
         </pre>
+          <p>
+           The function below will randomize the array. So, that they will 
+           appear in different places each time.
+          </p>
+        <pre>
+          <code>
+            cardArray.sort(() => 0.5 - Math.random());  
+          </code>
+        </pre>
       </section>
       <section class="main-section">
         <header id="createBoard">
@@ -238,14 +249,12 @@
         </header>
         <p>
           With the array built, you'll need to display the contents of the array
-          on the grid. A JavaScript function can do this. I named mine
-          createBoard.
+          on the grid. The createBoard function will do this.
         </p>
         <p>
-          To loop through each of the objects of the array create a for loop.
-          Through each loop card will be set to the image. Then use setAttribute
-          to set the image to blank. It's a good idea to check the grid, before
-          adding the second setAttribute, the addEventListener and appendChild.
+          Use a for loop to "loop through" the objects of the array. Each loop will assign a value to
+          card and create an image. Test the function check the grid - it should be all 
+          blank white squares - before writing the second setAttribute and the addEventListener. 
         </p>
         <pre>
             <code> 
@@ -260,30 +269,49 @@
               }
             </code>
             </pre>
+            <h4>Each line of code has a purpose:</h4>
+            <ul>
+              <li>
+                card.setAttribute - sets the images to blank.
+              </li>
+              <li>
+                card.setAttribute - sets each property of the object a unique "data-id" 
+                (Which will be used in a function later.)
+              </li>
+              <li>
+                card.addEventListener - listens for a click and flips a card.
+              </li>
+            </ul>
       </section>
       <section class="main-section">
         <header id="flipcard">
           <h1>JavaScript Function: flipcard</h1>
         </header>
         <p>
-          The flipcard function will listen for a click of the mouse on the grid. With 
-          a click of the mouse a card will be flipped, the card will be pushed to the 
-          cardsChosen array and the cardsId will be pushed to the cardsChosenId array.  
+          The flipcard function "listens" for a click of the mouse and then flips the card. 
+          Then pushes the selected card into the cardsChosen array and the cardsId pushes 
+          into the cardsChosenId array.   
         </p>
-        <p>
-          Create a variable, I named mine cardId. Using this.getAttribute set it to 
-          the "data-id" which is created with each pass through the createBoard loop. 
-        </p>
-        <p>
-         Create an empty cardsChosen array and an cardsChosenId array. 
-         This.setAttribute will then set the src to the image chosen - flipping the card. 
-        </p>
-        <p>
-          The last item in the function is an if statement. If the lenght the cardsChosen 
-          array reaches two, the checkForMatch function runs. If no match exists, after 
-          the timeout runs, the cards flip back.
-        </p>
-        <pre>
+         <h4>
+           Steps to create the function:
+         </h4>
+        <ul>
+          <li>
+            Create a variable named cardId. Using this.getAttribute set it to 
+            the "data-id" created in the createBoard function.  
+          </li>
+          <li>
+            Create an empty cardsChosen array and an cardsChosenId array. 
+            This.setAttribute will then set the src to the image chosen - flipping the card. 
+          </li>
+          <li>
+            Create an if statement which checks the length of the cardsChosen array. 
+            if it reaches two, the checkForMatch function runs. If no match exists, after 
+            the timeout runs, the cards flip back.
+          </li>
+        </ul>
+         
+          <pre>
             <code> 
               function flipcard() {
                 var cardId = this.getAttribute("data-id");
@@ -295,7 +323,7 @@
                 }
               }
             </code>
-            </pre>
+          </pre>
       </section>
       <section class="main-section">
         <header id="checkForMatch">
