@@ -17,6 +17,7 @@
       <a class="nav-link" href="#createBoard">createBoard Function</a>
       <a class="nav-link" href="#flipcard">flipcard Function</a>
       <a class="nav-link" href="#checkForMatch">checkForMatch Function</a>
+      <a class="nav-link" href="#score">Keeping Score and Ending the Game</a>
     </nav>
     </nav>
     <main id="main-doc">
@@ -30,7 +31,14 @@
         <p>
           To build my JavaScript skills, I’m building a series of games. My technical page 
           will be about one game I've completed: The Memory Game.
-        </p>
+        </p>   
+        <p>
+          The completed game is on Github: 
+          <a href="https://github.com/grj923/memorygame">
+            The Memory Game
+          </a> 
+        </p> 
+        
         <p>
           Winning The Memory Game requires a player to click on two blank
           squares. After clicking on two squares, two of nine unique images are
@@ -331,20 +339,55 @@
         </header>
         <h4>The checkForMatch function will check for three things:</h4>
         <ul>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+          <li>
+            If the player clicks the same image an alert is 
+            posted informing the player the same image was clicked. 
+           </li>
+          <li>
+            If the the player makes a match the image is returned to blank,
+            one point is added and the event listener for the two scquares is disabled.
+          </li>
+          <li>
+            If the player picks two images that do not match an alert is posted: 
+            Sorry, try again. 
+          </li>
+        </ul>
+        <ul>
+          <p>Create three empty arrays:</p>
+          <li>cardsChosen</li>
+          <li>cardsChosenId</li>
+          <li>cardsWon</li>
         </ul>
         <p>
-          With the array built, you'll need to display the contents of the array
-          on the grid. A JavaScript function can do this. I named mine
-          createBoard.
+          Create a variable: cards using querySelectorAll that selects all the images.
+          Then, two const optionOneId and optionTwoId, each assigned to the 
+          first and second item in the cardsChosen array. 
         </p>
         <p>
-          To loop through each of the objects of the array create a for loop.
-          Through each loop card will be set to the image. Then use setAttribute
-          to set the image to blank. It's a good idea to check the grid, before
-          adding the second setAttribute, the addEventListener and appendChild.
+          Create an if else statement:
+          <ul>
+            <li>
+              The if statement checks if optionOneId == optionTwoId. 
+              If it is true: then, an alert is posted telling the player he has clciked the same image. 
+              The rules are that the player has to chose two diffrent sqaures to play.
+            </li>
+            <li>
+              else if: checks the two choices pushed to the cardsChosen array are an 
+              exact match. The cardsChosen arrays values were assigned with the flipcard 
+              function. 
+              <p>If a match occurs:</p> 
+              <ul>
+                <li>An alert is posted: You have found a match.</li>
+                <li>Using setAttribute the images are returned to blank.</li>
+                <li>Then using removeEventListener the eventListener for the 
+                  squares that got a match is disabled.</li>
+                <li>The cardsChosen is pushed into the cardsWon array.</li>  
+              </ul>
+            </li>
+            <li>
+              If two cards that do not match are chosen: 
+              then, an alert is posted to Try Again.</li>
+          </ul>
         </p>
         <pre>
             <code> 
@@ -372,6 +415,39 @@
             </code>
             </pre>
        
+      </section>
+      <section class="main-section">
+        <header id="score"><h1>Keeping Score and Ending The Game</h1></header>
+        <p>
+         This bit of code should follow the checkForMatch function and will do three things:
+        </p>
+         <ul>
+           <li>
+             Set cardsChosen array to empty
+            </li>
+           <li>
+             Return cardsChosenId array to empty
+            </li>
+           <li>
+             Display the players score.
+            </li>
+           <li>
+             Check if all cards have been matched and if they have post an alert: 
+             Congratualtions! You Have Won!
+            </li>
+         </ul>
+              
+        <pre>
+          <code> 
+            cardsChosen = [];
+            cardsChosenId = [];
+            resultDisplay.textContent = cardsWon.length;
+            if ((cardsWon.length = cardsArray.length / 2)) {
+              resultDisplay.textContent = "Congratutaltions! You Found Them All!";
+            }
+          }
+          </code>
+        </pre>
       </section>
     </main>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
