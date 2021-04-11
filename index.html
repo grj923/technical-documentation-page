@@ -14,22 +14,17 @@
       <a class="nav-link" href="#HTML">HTML</a>
       <a class="nav-link" href="#CSS">CSS</a>
       <a class="nav-link" href="#Card_Array">Card Array</a>
-      <a class="nav-link" href="#CreateBoard_Function">CreateBoard Function</a>
-      <a class="nav-link" href="#Flipcard_Function">Flipcard Function</a>
-      <a class="nav-link" href="#CheckForMatch_Function">CheckForMatch Function</a>
-      <a class="nav-link" href="#Keeping_Score_and_Ending_The_Game">Keeping Score and Ending the Game</a>
+      <a class="nav-link" href="#createBoard_Function">createBoard Function</a>
+      <a class="nav-link" href="#flipCard_Function">flipCard Function</a>
+      <a class="nav-link" href="#checkForMatch_Function">checkForMatch Function</a>
+      <a class="nav-link" href="#Keeping_Score_and_Ending_The_Game">Keeping Score and Ending The Game</a>
     </nav>
     </nav>
     <main id="main-doc">
-      <section class="main-section">
-        <header id="Introduction"><h1>INTRODUCTION</h1></header>
+      <section class="main-section" id="Introduction">
+        <header><h1>Introduction</h1></header>
         <p>
-          This technical page is the fourth of five projects required to earn a
-          certificate in Responsive Web Design from FreeCodeCamp. First, using placeholder 
-          text I completed the framework: HTML and CSS.
-        </p>
-        <p>
-          To build my JavaScript skills, I’m building a series of games. My technical page 
+          To build my JavaScript skills, I’m building a series of games this technical page 
           will be about one game I've completed: The Memory Game.
         </p>   
         <p>
@@ -40,11 +35,12 @@
         </p> 
         
         <p>
-          Winning The Memory Game requires a player to click on two blank
-          squares. After clicking on two squares, two of nine unique images are
-          revealed. The player must remember which images were revealed and
-          where they were on the grid. With succedding selections the player
-          matches these images and when the player matches all images, they win.
+          In The Memory Game, the player clicks on any two blank white squares - hidden behind 
+          are nine pairs of images. Each turn allows two picks, if no match occurs 
+          the images are hidden once again and the player needs to remember the location 
+          of each. If a match occurs the player recieves a point. In either case, 
+          the player chooses again. With successive selections the player attempts to match 
+          images until all are matched. 
         </p>
         <h4>The steps to build a memory game:</h4>
         <ul>
@@ -55,8 +51,8 @@
         </ul>
       </section>
 
-      <section class="main-section">
-        <header id="HTML"><h1>HTML</h1></header>
+      <section class="main-section" id="HTML">
+        <header><h1>HTML</h1></header>
         <p>
           First, create three files: index.HTML, styles.css and app.js. 
           In the index.HTML file, (Note: I'm using VS code with the extension emmet snippets.) 
@@ -120,8 +116,8 @@
           </code>
           </pre>
       </section>
-      <section class="main-section">
-        <header id="CSS"><h1>CSS</h1></header>
+      <section class="main-section" id="CSS">
+        <header><h1>CSS</h1></header>
         <p>
           My goal was to practice and build upon my JavaScript skills. So, the
           syling was minimal.
@@ -131,7 +127,7 @@
           100px and with twelve images, I created a grid 300 pixels tall and
           400 pixels wide.
         </p>
-        <h4>To Create The Grid:</h4>
+        <h4>Create The Game Grid:</h4>
         <ul>
           <li>
             To select and style a class component such as class="grid": .grid
@@ -153,20 +149,22 @@
             </code>
           </pre>
       </section>
-      <section class="main-section">
-        <header id="Card_Array"><h1>Card Array</h1></header>
-        <p>Create</p>
+      <section class="main-section" id="Card_Array">
+        <header><h1>Card Array</h1></header>
         <p>
           In the app.js file, start with an event listener. This will load 
-          the contents of the file. Since the contents of the object won't be
-          changed use const instead of var or let. 
+          the contents of the file. 
         </p>
       <pre>
         <code>
           document.addEventListener("DOMContentLoaded", () => {}
         </code>
       </pre>
-      <p>All functions should be placed within the curly braces of the function.</p>
+      <p>
+        Since the contents of the object won't be
+        changed use const instead of var or let. 
+        All functions should be placed within the curly braces of the function.
+      </p>
 
         <h4>The array should should have:</h4>
 
@@ -251,10 +249,8 @@
           </code>
         </pre>
       </section>
-      <section class="main-section">
-        <header id="CreateBoard_Function">
-          <h1>CreateBoard Function</h1>
-        </header>
+      <section class="main-section" id="createBoard_Function">
+        <header><h1>createBoard Function</h1></header>
         <p>
           With the array built, you'll need to display the contents of the array
           on the grid. The createBoard function will do this.
@@ -291,9 +287,8 @@
               </li>
             </ul>
       </section>
-      <section class="main-section">
-        <header id="Flipcard_Function">
-          <h1>Flipcard Function</h1>
+      <section class="main-section" id="flipCard_Function">
+        <header><h1>flipCard Function</h1>     
         </header>
         <p>
           The flipcard function "listens" for a click of the mouse and then flips the card. 
@@ -333,10 +328,8 @@
             </code>
           </pre>
       </section>
-      <section class="main-section">
-        <header id="CheckForMatch_Function">
-          <h1>CheckForMatch Function</h1>
-        </header>
+      <section class="main-section" id="checkForMatch_Function">
+        <header><h1>checkForMatch Function</h1></header>
         <h4>The checkForMatch function will check for three things:</h4>
         <ul>
           <li>
@@ -416,8 +409,8 @@
             </pre>
        
       </section>
-      <section class="main-section">
-        <header id="Keeping_Score_and_Ending_The_Game"><h1>Keeping Score and Ending The Game</h1></header>
+      <section class="main-section" id="Keeping_Score_and_Ending_The_Game">
+        <header><h1>Keeping Score and Ending The Game</h1></header>
         <p>
          This bit of code should follow the checkForMatch function and will do three things:
         </p>
